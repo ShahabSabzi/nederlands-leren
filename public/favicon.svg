@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#1c1917"/>
+  <text x="32" y="36" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="26" text-anchor="middle" fill="#f59e0b">NL</text>
+  <rect x="0" y="50" width="64" height="4" fill="#AE1C28"/>
+  <rect x="0" y="54" width="64" height="4" fill="#FFFFFF"/>
+  <rect x="0" y="58" width="64" height="6" fill="#21468B"/>
+</svg>
