@@ -50,6 +50,13 @@ export interface ChapterExam {
   questions: ExerciseItem[];
 }
 
+/** The closing pages of each chapter: culture, a practical task, own vocabulary and a self-check. */
+export interface ReflectionData {
+  culture?: string;
+  practice?: string;
+  reflectionQuestions: string[];
+}
+
 export interface CustomLessonData {
   id: string;
   chapterNumber: string;
@@ -65,4 +72,5 @@ export interface CustomLessonData {
   pronunciation?: PronunciationSectionData;
   exam?: ChapterExam;
   culturalOrPracticalNote?: string;
+  reflection?: ReflectionData;
 }

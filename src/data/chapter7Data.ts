@@ -673,35 +673,35 @@ Speciale regel voor niet-personen (dingen):
         {
           id: 1,
           prompt: 'Sandra wil...',
-          answer: 'a',
+          answer: 'a: een spijkerbroek kopen.',
           options: ['a: een spijkerbroek kopen.', 'b: alleen even kijken.'],
           explanation: 'Sandra zegt tegen de verkoopster: "Ik zoek een spijkerbroek." Het meisje en de jongen wilden alleen even kijken.'
         },
         {
           id: 2,
           prompt: 'Sandra heeft...',
-          answer: 'b',
+          answer: 'b: maat 40.',
           options: ['a: maat 42.', 'b: maat 40.'],
           explanation: 'Sandra zegt: "Ik heb normaal maat 40, soms groter."'
         },
         {
           id: 3,
           prompt: 'Sandra past...',
-          answer: 'a',
+          answer: 'a: twee spijkerbroeken.',
           options: ['a: twee spijkerbroeken.', 'b: een lichte spijkerbroek.'],
           explanation: 'De verkoopster geeft haar twee spijkerbroeken van twee verschillende merken om te passen.'
         },
         {
           id: 4,
           prompt: 'Sandra vindt de tweede broek...',
-          answer: 'a',
+          answer: 'a: een beetje wijd.',
           options: ['a: een beetje wijd.', 'b: een beetje klein.'],
           explanation: 'Sandra zegt: "Ik vind hem wel een beetje wijd. Hebt u hem in een kleinere maat?"'
         },
         {
           id: 5,
           prompt: 'Sandra koopt uiteindelijk...',
-          answer: 'a',
+          answer: 'a: een wit en een roze T-shirt.',
           options: ['a: een wit en een roze T-shirt.', 'b: een wit, een rood en een roze T-shirt.'],
           explanation: 'Ze twijfelde over rood, maar koos het roze shirt omdat dit haar het best staat. Ze koopt dus wit en roze.'
         }

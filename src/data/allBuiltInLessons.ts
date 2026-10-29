@@ -17,8 +17,40 @@ import { CHAPTER_15_DATA } from './chapter15Data';
 import { CHAPTER_16_DATA } from './chapter16Data';
 import { CHAPTER_17_DATA } from './chapter17Data';
 import { CHAPTER_18_DATA } from './chapter18Data';
+import { LESSON_SUPPLEMENTS } from './supplements';
+import { LessonSupplement } from './supplements/types';
 
-export const BUILT_IN_LESSONS: CustomLessonData[] = [
+/** Adds supplement content to a base chapter without changing the base data. */
+function applySupplement(base: CustomLessonData): CustomLessonData {
+  const extra = LESSON_SUPPLEMENTS[base.id];
+  if (!extra) return base;
+
+  const lastDialogueId = base.dialogue.reduce((max, line) => Math.max(max, line.id), 0);
+  const addedDialogue = (extra.dialogue || []).map((line, index) => ({
+    ...line,
+    id: lastDialogueId + index + 1,
+  }));
+
+  const knownWords = new Set(base.vocabulary.map((word) => word.dutch.toLowerCase()));
+  const addedVocabulary = (extra.vocabulary || []).filter((word) => {
+    const key = word.dutch.toLowerCase();
+    if (knownWords.has(key)) return false;
+    knownWords.add(key);
+    return true;
+  });
+
+  return {
+    ...base,
+    dialogue: [...base.dialogue, ...addedDialogue],
+    vocabulary: [...base.vocabulary, ...addedVocabulary],
+    grammarPoints: [...(base.grammarPoints || []), ...(extra.grammarPoints || [])],
+    exercises: [...(base.exercises || []), ...(extra.exercises || [])],
+    pronunciation: extra.pronunciation || base.pronunciation,
+    reflection: extra.reflection || base.reflection,
+  };
+}
+
+const BASE_LESSONS: CustomLessonData[] = [
   CHAPTER_1_DATA,
   CHAPTER_2_DATA,
   CHAPTER_3_DATA,
@@ -38,3 +70,5 @@ export const BUILT_IN_LESSONS: CustomLessonData[] = [
   CHAPTER_17_DATA,
   CHAPTER_18_DATA,
 ];
+
+export const BUILT_IN_LESSONS: CustomLessonData[] = BASE_LESSONS.map(applySupplement);

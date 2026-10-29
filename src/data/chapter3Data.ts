@@ -269,35 +269,35 @@ Let op het achtervoegsel:
         {
           id: 1,
           prompt: 'Edit, Andres en Susy zijn...',
-          answer: 'a',
+          answer: 'a: in een café.',
           options: ['a: in een café.', 'b: in de les.'],
           explanation: 'Ze vieren Edits verjaardag gezellig in het café.'
         },
         {
           id: 2,
           prompt: 'Andres is...',
-          answer: 'b',
+          answer: 'b: de broer van Edit.',
           options: ['a: de zus van Edit.', 'b: de broer van Edit.'],
           explanation: 'Edit stelt hem voor: "Dit is mijn broer Andres."'
         },
         {
           id: 3,
           prompt: 'Edit en Susy kennen elkaar...',
-          answer: 'a',
+          answer: 'a: van de cursus.',
           options: ['a: van de cursus.', 'b: van het werk.'],
           explanation: 'Susy antwoordt op Andres\' vraag: "Van de cursus Nederlands."'
         },
         {
           id: 4,
           prompt: 'Edit is jarig en zij geeft...',
-          answer: 'a',
+          answer: 'a: een rondje.',
           options: ['a: een rondje.', 'b: een glas wijn.'],
           explanation: 'Omdat ze jarig is, trakteert Edit en betaalt ze het eerste rondje.'
         },
         {
           id: 5,
           prompt: 'Andres betaalt...',
-          answer: 'b',
+          answer: 'b: het tweede rondje.',
           options: ['a: alles.', 'b: het tweede rondje.'],
           explanation: 'Andres zegt: "Dit rondje betaal ik." en Edit bevestigt dat hij het tweede rondje betaalt.'
         }

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { CustomLessonData } from '../types/lesson';
 import { speakDutch } from '../utils/speech';
 import { isAnswerCorrect } from '../utils/answers';
+import { ReflectionPanel } from './ReflectionPanel';
 import { Volume2, BookOpen, SpellCheck, CheckCircle2, Award, Sparkles, Eye, EyeOff, HelpCircle, Layers, Check, X, RotateCcw, AlertCircle } from 'lucide-react';
 
 interface DynamicLessonViewerProps {
@@ -15,7 +16,7 @@ export const DynamicLessonViewer: React.FC<DynamicLessonViewerProps> = ({
   audioSpeed,
   onRecordExerciseCompletion,
 }) => {
-  const [activeTab, setActiveTab] = useState<'dialogue' | 'vocab' | 'grammar' | 'exercises' | 'clothes' | 'reading' | 'pronunciation' | 'exam'>('dialogue');
+  const [activeTab, setActiveTab] = useState<'dialogue' | 'vocab' | 'grammar' | 'exercises' | 'clothes' | 'reading' | 'pronunciation' | 'exam' | 'reflection'>('dialogue');
   const [showTranslations, setShowTranslations] = useState<boolean>(true);
 
   // Exam state
@@ -161,6 +162,18 @@ export const DynamicLessonViewer: React.FC<DynamicLessonViewerProps> = ({
               }`}
             >
               🗣️ Uitspraak
+            </button>
+          )}
+          {lesson.reflection && (
+            <button
+              onClick={() => setActiveTab('reflection')}
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap cursor-pointer ${
+                activeTab === 'reflection'
+                  ? 'bg-amber-500 text-stone-950 shadow-xs'
+                  : 'text-stone-400 hover:text-white hover:bg-stone-800'
+              }`}
+            >
+              🧭 Reflectie & Cultuur
             </button>
           )}
           {lesson.exam && (
@@ -1005,6 +1018,10 @@ export const DynamicLessonViewer: React.FC<DynamicLessonViewerProps> = ({
       )}
 
       {/* Tab: Exam (Eindtoets / Master Quiz) */}
+      {activeTab === 'reflection' && lesson.reflection && (
+        <ReflectionPanel lessonKey={lesson.id} reflection={lesson.reflection} />
+      )}
+
       {activeTab === 'exam' && lesson.exam && (
         <div className="space-y-6">
           {/* Result Banner after submission */}

@@ -11,6 +11,8 @@ import {
   Layers,
   Library,
   Trophy,
+  ListChecks,
+  Globe2,
 } from 'lucide-react';
 import { CustomLessonData } from '../types/lesson';
 
@@ -25,7 +27,9 @@ export type TabType =
   | 'sentence_structure'
   | 'possessives'
   | 'pronunciation'
-  | 'master_test';
+  | 'master_test'
+  | 'extra_oefeningen'
+  | 'reflectie';
 
 /** Chapter 2 has hand-built sections, so it gets the sub-navigation bar. */
 export const HAND_BUILT_CHAPTER_ID = 'hoofdstuk_2';
@@ -53,6 +57,8 @@ const CHAPTER_TABS: { id: TabType; label: string; icon: React.ElementType }[] = 
   { id: 'possessives', label: 'Bezittelijke Voornaamwoorden', icon: CheckCircle2 },
   { id: 'pronunciation', label: 'Uitspraak a – aa', icon: Volume2 },
   { id: 'master_test', label: 'Eindtoets', icon: Award },
+  { id: 'extra_oefeningen', label: 'Extra oefeningen', icon: ListChecks },
+  { id: 'reflectie', label: 'Reflectie & Cultuur', icon: Globe2 },
 ];
 
 const MODE_BUTTONS: { id: PrimaryMode; label: string; icon: React.ElementType }[] = [

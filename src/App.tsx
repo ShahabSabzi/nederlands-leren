@@ -18,6 +18,8 @@ import { DynamicLessonViewer } from './components/DynamicLessonViewer';
 import { GlobalVocabFlashcardsSection } from './components/GlobalVocabFlashcardsSection';
 import { GlobalGrammarSection } from './components/GlobalGrammarSection';
 import { BUILT_IN_LESSONS } from './data/allBuiltInLessons';
+import { ChapterTwoExtras, CHAPTER_TWO_REFLECTION } from './components/ChapterTwoExtras';
+import { ReflectionPanel } from './components/ReflectionPanel';
 
 const COMPLETED_KEY = 'nederlands-leren:completed';
 const SPEED_KEY = 'nederlands-leren:speed';
@@ -147,6 +149,12 @@ export default function App() {
                 )}
                 {currentTab === 'master_test' && (
                   <MasterTest audioSpeed={audioSpeed} onRecordExerciseCompletion={handleRecordCompletion} />
+                )}
+                {currentTab === 'extra_oefeningen' && (
+                  <ChapterTwoExtras audioSpeed={audioSpeed} onRecordExerciseCompletion={handleRecordCompletion} />
+                )}
+                {currentTab === 'reflectie' && (
+                  <ReflectionPanel lessonKey={HAND_BUILT_CHAPTER_ID} reflection={CHAPTER_TWO_REFLECTION} />
                 )}
               </>
             )}
